@@ -12,30 +12,30 @@
 
 
 <div data-role="page" >
-<div data-role="panel" id="about" style="padding:0;">
+<div data-role="panel" id="about" data-position="right">
 <h2 align="center">О программе</h2>
 </div>
-<div data-role="panel" id="mypanel" style="padding:0;">
+<div data-role="panel" id="language" style="padding:0;">
 	<h3 align="center">Выберите язык</h3>
 <fieldset class="ui-grid-a" style="text-align:center">
 <div class="ui-block-a">
-<a href="#mypanel" class="lang" id="en" data-rel="close">
-<img src="http://soc.web12.ru/app/flag/en.png"></a></div>
+<a href="#language" class="lang" id="en" data-rel="close">
+<img src="flag/en.png"></a></div>
 <div class="ui-block-b">
-<a href="#mypanel" class="lang" data-rel="close" id="ru">
-<img src="http://soc.web12.ru/app/flag/ru.png"></a></div>	
+<a href="#language" class="lang" data-rel="close" id="ru">
+<img src="flag/ru.png"></a></div>	
 <div class="ui-block-a">
-<a href="#mypanel" class="lang" data-rel="close" id="de">
-<img src="http://soc.web12.ru/app/flag/de.png"></a></div>
+<a href="#language" class="lang" data-rel="close" id="de">
+<img src="flag/de.png"></a></div>
 <div class="ui-block-b">
-<a href="#mypanel" class="lang" data-rel="close" id="fr"
-><img src="http://soc.web12.ru/app/flag/fr.png"></a></div>	
+<a href="#language" class="lang" data-rel="close" id="fr"
+><img src="flag/fr.png"></a></div>	
 <div class="ui-block-a">
-<a href="#mypanel" class="lang" data-rel="close" id="it">
-<img src="http://soc.web12.ru/app/flag/it.png"></a></div>
+<a href="#language" class="lang" data-rel="close" id="it">
+<img src="flag/it.png"></a></div>
 <div class="ui-block-b">
-<a href="#mypanel" class="lang" data-rel="close" id="es">
-<img src="http://soc.web12.ru/app/flag/es.png"></a></div>		
+<a href="#language" class="lang" data-rel="close" id="es">
+<img src="flag/es.png"></a></div>		
 </fieldset>	
 	
 </div><!-- /panel -->
@@ -53,7 +53,7 @@
 	<div data-role="navbar">
 		<ul> 
 		<!--class="ui-btn-active ui-state-persist"-->
-			<li><a href="#mypanel">Язык</a></li>
+			<li><a href="#language">Язык</a></li>
 			<li><a href="c.html" data-transition="slide">Albums</a></li>
 			<li><a href="#about" data-transition="slide">О программе</a></li>
 		</ul>
@@ -64,7 +64,7 @@
 var lang = 'en';
  $(".lang").click(function(e){  
       lang = this.id;
-      $("#mainlang").attr("src", "http://soc.web12.ru/app/flag/"+lang+".png");
+      $("#mainlang").attr("src", "flag/"+lang+".png");
  });
 </script>
 </body>
