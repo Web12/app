@@ -10,27 +10,62 @@
 </head>
 <body>
 
-<div data-role="page" >
 
-	<div data-role="header" data-theme="b" data-position="fixed">
-		<h1>Header</h1>
+<div data-role="page" >
+<div data-role="panel" id="about" style="padding:0;">
+<h2 align="center">О программе</h2>
+</div>
+<div data-role="panel" id="mypanel" style="padding:0;">
+	<h3 align="center">Выберите язык</h3>
+<fieldset class="ui-grid-a" style="text-align:center">
+<div class="ui-block-a">
+<a href="#mypanel" class="lang" id="en" data-rel="close">
+<img src="http://soc.web12.ru/app/flag/en.png"></a></div>
+<div class="ui-block-b">
+<a href="#mypanel" class="lang" data-rel="close" id="ru">
+<img src="http://soc.web12.ru/app/flag/ru.png"></a></div>	
+<div class="ui-block-a">
+<a href="#mypanel" class="lang" data-rel="close" id="de">
+<img src="http://soc.web12.ru/app/flag/de.png"></a></div>
+<div class="ui-block-b">
+<a href="#mypanel" class="lang" data-rel="close" id="fr"
+><img src="http://soc.web12.ru/app/flag/fr.png"></a></div>	
+<div class="ui-block-a">
+<a href="#mypanel" class="lang" data-rel="close" id="it">
+<img src="http://soc.web12.ru/app/flag/it.png"></a></div>
+<div class="ui-block-b">
+<a href="#mypanel" class="lang" data-rel="close" id="es">
+<img src="http://soc.web12.ru/app/flag/es.png"></a></div>		
+</fieldset>	
+	
+</div><!-- /panel -->
+	<div data-role="header" data-theme="a" data-position="fixed">
+		<h1>Проверка орфографии</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Page content goes here.</p>		
+		<div align="center"><img src="http://soc.web12.ru/app/flag/en.png" id="mainlang"></div>	
+<textarea style="height:200px;" placeholder="Текст"></textarea>
+<button data-theme="a">Проверить</button>
 	</div><!-- /content -->
 
-	<div data-role="footer" data-theme="b" data-position="fixed">
+	<div data-role="footer" data-theme="a" data-position="fixed">
 	<div data-role="navbar">
-		<ul>
-			<li><a href="a.html">Info</a></li>
-			<li><a href="b.html">Friends</a></li>
-			<li><a href="c.html">Albums</a></li>
-			<li><a href="d.html">Emails</a></li>
+		<ul> 
+		<!--class="ui-btn-active ui-state-persist"-->
+			<li><a href="#mypanel">Язык</a></li>
+			<li><a href="c.html" data-transition="slide">Albums</a></li>
+			<li><a href="#about" data-transition="slide">О программе</a></li>
 		</ul>
 	</div><!-- /navbar -->
 	</div><!-- /footer -->
 </div><!-- /page -->
-
+<script>
+var lang = 'en';
+ $(".lang").click(function(e){  
+      lang = this.id;
+      $("#mainlang").attr("src", "http://soc.web12.ru/app/flag/"+lang+".png");
+ });
+</script>
 </body>
 </html>
