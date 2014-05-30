@@ -22,4 +22,6 @@
     	<gap:plugin name="org.apache.cordova.dialogs" />
 		<gap:plugin name="org.apache.cordova.contacts" version="0.2.9" />
 		<gap:platform name="ios" />
+<access origin="http://api.bingo-boom.net" subdomains="true" />
+
     </widget>
