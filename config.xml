@@ -24,4 +24,6 @@
 		<gap:platform name="ios" />
 <access origin="http://api.bingo-boom.net" subdomains="true" />
 <preference name="fullscreen" value="true" />
+<preference name="DisallowOverscroll" value="true"/>
+
     </widget>
