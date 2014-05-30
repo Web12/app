@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns = "http://www.w3.org/ns/widgets"
+<widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.example"
-        versionCode="10" 
-        version   = "1.0.0">
-
-    <!-- versionCode is optional and Android only -->
-
-    <name>PhoneGap Example</name>
-
+        id = com.web12.test"
+        version = "0.0.1">
+    <name>Test</name>
     <description>
-        An example for phonegap build docs. 
+        Test
     </description>
-
-    <author href="https://web12.ru/" email="info@web12.ru">
-        Harutyun Harutyunyan 
+    <author href="https://build.phonegap.com" email="info@web12.ru">
+        Harutyun Harutyunyan
     </author>
-
-    <content src="index.html" />
-
+    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="orientation" value="portrait" />
+    <gap:platform name="ios" />
+    <gap:splash src="splash.png" />
+    <icon src="icon.png" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
 </widget>
