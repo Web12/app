@@ -3,62 +3,42 @@
   <head>
     <title>Device Properties Example</title>
     <script src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for PhoneGap to load
-    //
-   // document.addEventListener("deviceready", onDeviceReady, false);
-
-    // PhoneGap is ready
-    //
-    function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
-
-        element.innerHTML = 'Device Name: ' + device.name + '<br />' +
-                            'Device PhoneGap: ' + device.phonegap + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: ' + device.uuid + '<br />' +
-                            'Device Version: ' + device.version + '<br />';
+    <style>
+    html, body {
+    	padding:0; margin:0;
     }
-    
-    // Show a custom alert
-    //
-
-function alertDismissed() {
-    // do something
-    alert('ok');
-}
-
-
-    function showAlert() {
-navigator.notification.alert(
-    'You are the winner!', // message
-    alertDismissed, // callback
-    'Game Over', // title
-    'Done' // buttonName
-);
+    body {
+    	background:#3B5998;
     }
-
-    // Beep three times
-    //
-    function playBeep() {
-        navigator.notification.beep(1);
+    </style>
+    <script>
+    function onSuccess(contacts) {
+    for (var i = 0; i < navigator.contacts.length; i++) {
+        for (var j = 0; j < contacts[i].addresses.length; j++) {
+            alert("Pref: "         + contacts[i].addresses[j].pref          + "\n" +
+                "Type: "           + contacts[i].addresses[j].type          + "\n" +
+                "Formatted: "      + contacts[i].addresses[j].formatted     + "\n" +
+                "Street Address: " + contacts[i].addresses[j].streetAddress + "\n" +
+                "Locality: "       + contacts[i].addresses[j].locality      + "\n" +
+                "Region: "         + contacts[i].addresses[j].region        + "\n" +
+                "Postal Code: "    + contacts[i].addresses[j].postalCode    + "\n" +
+                "Country: "        + contacts[i].addresses[j].country);
+        }
     }
+};
 
-    // Vibrate for 2 seconds
-    //
-    function vibrate() {
-        navigator.notification.vibrate();
-    }
-    
+function onError(contactError) {
+    alert('onError!');
+};
 
+// find all contacts
+var options = new ContactFindOptions();
+options.filter = "";
+var filter = ["displayName", "addresses"];
+navigator.contacts.find(filter, onSuccess, onError, options);
     </script>
   </head>
-  <body onload="onDeviceReady()">
-    <p id="deviceProperties">Loading device properties...</p>
-    <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
-    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
-    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
-    
+  <body>
+
   </body>
 </html>
