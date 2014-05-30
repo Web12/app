@@ -20,6 +20,6 @@
     	<preference name="orientation" value="portrait" />
     	<gap:plugin name="org.apache.cordova.device" />
     	<gap:plugin name="org.apache.cordova.dialogs" />
-		<gap:plugin name="Contacts" value="org.apache.cordova.ContactManager" />
+		<gap:plugin name="org.apache.cordova.contacts" version="0.2.9" />
 		<gap:platform name="ios" />
     </widget>
